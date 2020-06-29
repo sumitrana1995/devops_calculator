@@ -27,6 +27,19 @@
     </dependency>
   </dependencies>
 
+ <distributionManagement>
+  <snapshotRepository>
+    <id>Calculator_DevOps</id>
+    <name>Calculator_DevOps</name>
+    <url>http://localhost:8081/repository/Calculator_DevOps/</url>
+  </snapshotRepository>
+</distributionManagement>
+  
+  
+  
+  
+  
+  
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
