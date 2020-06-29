@@ -1,20 +1,26 @@
-node {
-      stage('Clean') {
-      def mvnHome = tool name: 'Maven', type: 'maven'
+pipeline {
+  agent any
+      tools{
+            maven 'MAVEN'
+            jdk 'JAVA'
       
-        sh '${mvnHome}/bin/mvn clean'
-      
+      }
+  stages 
+    {
+    stage('Clean') {
+      steps {
+        sh 'mvn clean'
+      }
     }
     stage('Compile') {
-      def mvnHome = tool name: 'Maven', type: 'maven'
-      
-        sh '${mvnHome}/bin/mvn compile'
-      
+      steps {
+        sh 'mvn compile'
+      }
     }
     stage('Test') {
-      def mvnHome = tool name: 'Maven', type: 'maven'
-      
-        sh '${mvnHome}/bin/mvn test'
-      
+      steps {
+        sh 'mvn test'
+      }
     }
+  }
 }
