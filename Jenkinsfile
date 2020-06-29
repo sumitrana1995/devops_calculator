@@ -1,5 +1,6 @@
 node {
-    
+   stages
+    {
    stage('Clean') {
       def mvnHome = tool name: 'Maven', type: 'maven'
       steps {
@@ -17,5 +18,6 @@ node {
       steps {
         sh '${mvnHome}/bin/mvn test'
       }
+    }
     }
 }
